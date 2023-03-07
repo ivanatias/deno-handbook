@@ -9,6 +9,7 @@
     "twind": "https://esm.sh/twind@0.16.17",
     "twind/": "https://esm.sh/twind@0.16.17/",
     "react-icons/": "https://deno.land/x/react_icons@0.2.3/",
-    "components/": "./components/"
+    "components/": "./components/",
+    "islands/": "./islands/"
   }
 }
