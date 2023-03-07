@@ -5,19 +5,23 @@ interface Props {
   className?: string
   id: string
   title: string
+  hasIcon?: boolean
 }
 
-const defaultStyle =
-  'outline-none border(& green-100) w-full p-5 rounded-full text(sm lg:base black) placeholder(gray-500) placeholder-shown:font-semibold'
-
 const Input = (
-  { type = 'text', className = defaultStyle, ...restOfProps }: Props,
-) => (
-  <input
-    type={type}
-    class={className}
-    {...restOfProps}
-  />
-)
+  { type = 'text', className, hasIcon = false, ...restOfProps }: Props,
+) => {
+  const defaultStyle = `outline-none border(& green-100) w-full ${
+    hasIcon && 'pl-10'
+  } p-5 rounded-full text(sm lg:base black) placeholder(gray-500) placeholder-shown:font-semibold`
+
+  return (
+    <input
+      type={type}
+      class={className ?? defaultStyle}
+      {...restOfProps}
+    />
+  )
+}
 
 export default Input
