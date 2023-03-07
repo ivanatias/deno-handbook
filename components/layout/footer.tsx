@@ -1,7 +1,7 @@
 import { AiFillGithub } from 'react-icons/ai/mod.ts'
 
 const Footer = () => (
-  <footer class='p-5 max-w-prose mx-auto flex justify-center'>
+  <footer class='p-5 max-w-4xl mx-auto flex justify-center'>
     <a
       href='https://github.com/ivanatias/deno-handbook/blob/main/CONTRIBUTING.md'
       target='_blank'

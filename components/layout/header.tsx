@@ -1,7 +1,7 @@
 import { AiFillGithub } from 'react-icons/ai/mod.ts'
 
 const Header = () => (
-  <header class='p-5 max-w-prose mx-auto'>
+  <header class='p-5 max-w-4xl mx-auto'>
     <div class='w-full flex gap-2 items-center justify-end'>
       <a
         href='https://github.com/ivanatias/deno-handbook'
