@@ -16,6 +16,7 @@ const SubHeader = () => (
       width={260}
       height={300}
       alt='Deno drinking a lemon squash'
+      class='animate-pulse'
     />
   </div>
 )
