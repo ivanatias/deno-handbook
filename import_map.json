@@ -13,6 +13,7 @@
     "react-icons/": "https://deno.land/x/react_icons@0.2.3/",
     "components/": "./components/",
     "islands/": "./islands/",
+    "utils/": "./utils/",
     "types": "./types.d.ts"
   }
 }

@@ -1,9 +1,19 @@
+import { Handlers, PageProps } from '$fresh/server.ts'
 import { Head } from '$fresh/runtime.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import ArticleCard from 'components/article-card.tsx'
 import Grid from 'components/grid.tsx'
+import { getAllArticles } from 'utils/articles.ts'
+import type { Article } from 'types'
 
-const Home = () => (
+export const handler: Handlers<Article[]> = {
+  async GET(_req, ctx) {
+    const articles = await getAllArticles()
+    return ctx.render(articles)
+  },
+}
+
+const Home = ({ data: articles }: PageProps<Article[]>) => (
   <>
     <Head>
       <title>Deno handbook en español</title>
@@ -12,46 +22,14 @@ const Home = () => (
     <Wrapper>
       <section>
         <Grid additionalStyles='mt-10'>
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
-          <ArticleCard
-            title='Que es Deno'
-            desc='is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.'
-            href='https://google.com'
-          />
+          {articles.map(({ title, excerpt, slug }) => (
+            <ArticleCard
+              key={slug}
+              title={title}
+              desc={excerpt}
+              href={slug}
+            />
+          ))}
         </Grid>
       </section>
     </Wrapper>
