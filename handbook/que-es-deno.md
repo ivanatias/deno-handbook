@@ -6,8 +6,6 @@ author: Iván Atias
 authorUrl: https://ivanatias.codes
 ---
 
-# ¿Qué es Deno?
-
 Deno es un entorno de ejecución de JavaScript y TypeScript basado en el motor V8 de Chrome y escrito en Rust por Ryan Dahl, creador de Node.js.
 
 ## El propósito de Deno
@@ -24,7 +22,7 @@ Algunas de sus features más importantes serían:
 - Puede empaquetar scripts en un sólo archivo de JavaScript o en un ejecutable.
 - Tiene soporte para el uso de módulos de npm.
 
-## Filosofía detras de Deno
+## Filosofía detrás de Deno
 
 Deno está pensado para mejorar la productividad y ser un entorno de scripting totalmente seguro.
 
