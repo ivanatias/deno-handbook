@@ -9,7 +9,7 @@ const ArticleCard = ({ title, desc, href }: Props) => (
     class='hover:bg-green-50 dark:hover:bg-green-900 border(& gray-200 dark:gray-500) p-4 rounded-lg transition duration-150 ease-in min-h-[200px]'
     href={href}
   >
-    <div class='flex(& col) gap-4 max-w-prose'>
+    <article class='flex(& col) gap-4 max-w-prose'>
       <h3 class='text(base lg:lg green-400) font-semibold mb-2 underline'>
         {title}
       </h3>
@@ -21,7 +21,7 @@ const ArticleCard = ({ title, desc, href }: Props) => (
           Leer más...
         </span>
       </div>
-    </div>
+    </article>
   </a>
 )
 
