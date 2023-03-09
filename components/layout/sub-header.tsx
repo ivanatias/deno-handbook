@@ -16,7 +16,7 @@ const SubHeader = () => (
       src='/lemon-squash.svg'
       width={260}
       height={300}
-      alt='Deno drinking a lemon squash'
+      alt='Deno tomando limonada'
       class='animate-pulse'
     />
   </div>
