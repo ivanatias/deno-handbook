@@ -75,6 +75,14 @@ const Home = ({ data: article }: PageProps<Article>) => {
               dangerouslySetInnerHTML={{ __html: body }}
             />
           </article>
+          <div class='mt-10 text-center'>
+            <a
+              href='/'
+              class='font-bold hover:underline transition duration-150'
+            >
+              ← Volver al inicio
+            </a>
+          </div>
         </section>
       </Wrapper>
     </>
