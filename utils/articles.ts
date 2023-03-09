@@ -37,6 +37,10 @@ const getAllArticles = async (): Promise<Article[]> => {
 
   const articles = await Promise.all(articlePromises) as Article[]
 
+  articles.sort((a, b) => {
+    return b.date.getTime() - a.date.getTime()
+  })
+
   return articles
 }
 
