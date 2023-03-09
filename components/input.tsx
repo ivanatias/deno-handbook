@@ -13,7 +13,7 @@ const Input = (
 ) => {
   const defaultStyle =
     `bg-transparent focus:border-green-300 outline-none border(& green-100) w-full ${
-      hasIcon && 'pl-10'
+      hasIcon ? 'pl-10' : ''
     } p-5 rounded-full text(sm lg:base black dark:white) placeholder(gray-500 dark:gray-400) placeholder-shown:font-semibold`
 
   return (
