@@ -16,7 +16,11 @@ export const handler: Handlers<Article[]> = {
 const Home = ({ data: articles }: PageProps<Article[]>) => (
   <>
     <Head>
-      <title>Deno handbook en español</title>
+      <title>Deno handbook en Español</title>
+      <meta
+        name='description'
+        content='Handbook en Español que proporciona información acerca de todo lo que esté relacionado con Deno (información general, frameworks, tips, utilidades y más). Hecho por developers, para developers.'
+      />
     </Head>
 
     <Wrapper>
