@@ -17,7 +17,7 @@ const Wrapper = ({ children }: Props) => (
       <div class='relative mt-5'>
         <AiOutlineSearch
           size={24}
-          class='z-10 text-gray-500 font-semibold absolute top-1/2 left-3 -translate-y-1/2'
+          class='z-10 text(gray-500 dark:gray-400) font-semibold absolute top-1/2 left-3 -translate-y-1/2'
           aria-hidden={true}
         />
         <SearchBox />
