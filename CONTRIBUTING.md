@@ -17,12 +17,28 @@ Si deseas agregar un artículo, por favor considera las siguientes pautas:
 - Usar la terminología correcta
 - El artículo debe ser conciso, compacto y entendible
 
-## Commits
+## Formato para commits
 
-Se deben usar los siguientes prefijos en cada uno de los commits para mayor claridad:
+Cada mensaje de commit consiste de un **encabezado**, **cuerpo** (opcional) y **footer** (opcional). El **encabezado** tiene un formato especial que incluye el **tipo** del commit, el **scope** y el **asunto**:
+
+```
+<tipo>(<scope>): <asunto>
+<LINEA EN BLANCO>
+<cuerpo>
+<LINEA EN BLANCO>
+<footer>
+```
+
+Se deben usar los siguientes **tipos** en cada uno de los commits para mayor claridad:
 
 - feat: Se está agregando una nueva feature, artículo, etc.
-- refactor: Se está modificando la forma o método con que se implementa una funcionalidad pero no la funcionalidad en si
-- styles: Cambios en el diseño/estilos
-- style: Cambios en el aspecto del código sin tocar la funcionalidad, como por ejemplo, agregar espaciados, etc.
-- docs: Modificaciones a la documentación
+- fix: Se está solucionando un bug.
+- refactor: Cambios en el código que no afectan la funcionalidad, no solucionan bugs ni añade una nueva feature.
+- styles: Cambios en el diseño/estilos.
+- style: Cambios en el aspecto del código que no alteran su funcionalidad o significado. Ejemplos: Agregar espaciados, eliminar punto y coma, etc.
+- perf: Cambios en el código que mejoran el rendimiento.
+- chore: Cambios de rutina, como por ejemplo, actualizar versiones de dependencias.
+- test: Agregar tests o corregir cualquier test ya existente.
+- docs: Modificaciones a la documentación.
+
+**Los commits deben ser escritos en inglés.**
