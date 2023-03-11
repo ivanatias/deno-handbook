@@ -13,7 +13,7 @@ export const handler: Handlers<Article[]> = {
   },
 }
 
-const Home = ({ data: articles }: PageProps<Article[]>) => (
+const Home = ({ data: articles, url }: PageProps<Article[]>) => (
   <>
     <Head>
       <title>Deno handbook en Español</title>
@@ -23,7 +23,7 @@ const Home = ({ data: articles }: PageProps<Article[]>) => (
       />
     </Head>
 
-    <Wrapper>
+    <Wrapper url={url}>
       <section>
         <Grid additionalStyles='mt-10'>
           {articles.map(({ title, excerpt, slug }) => (
