@@ -1,6 +1,6 @@
 ---
 title: ¿Qué es Deno?
-date: 2023-03-08
+date: 2023/03/08
 excerpt: Deno es un entorno de ejecución de JavaScript y TypeScript basado en el motor V8 y escrito en Rust por Ryan Dahl.
 author: Iván Atias
 authorUrl: https://ivanatias.codes
