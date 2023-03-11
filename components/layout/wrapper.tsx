@@ -7,13 +7,14 @@ import { AiOutlineSearch } from 'react-icons/ai/mod.ts'
 
 interface Props {
   children: ComponentChildren
+  url: URL
 }
 
-const Wrapper = ({ children }: Props) => (
+const Wrapper = ({ children, url }: Props) => (
   <>
     <Header />
     <main class='p-5 max-w-4xl mx-auto'>
-      <SubHeader />
+      <SubHeader isHome={url.pathname === '/'} />
       <div class='relative mt-5'>
         <AiOutlineSearch
           size={24}
