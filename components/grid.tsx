@@ -6,7 +6,7 @@ interface Props {
   additionalStyles?: string
 }
 
-const defaultStyles = 'grid(& cols-2 md:cols-3) gap-4'
+const defaultStyles = 'grid(& cols-1 sm:cols-2 lg:cols-3) gap-4'
 
 const Grid = (
   { children, className = defaultStyles, additionalStyles }: Props,
