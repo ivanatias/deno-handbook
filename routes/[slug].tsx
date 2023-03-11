@@ -1,6 +1,7 @@
 import { Handlers, PageProps } from '$fresh/server.ts'
 import { Head } from '$fresh/runtime.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
+import ReadButton from 'islands/button-read.tsx'
 import { getArticle } from 'utils/articles.ts'
 import { CSS } from 'gfm'
 import type { Article } from 'types'
@@ -14,7 +15,7 @@ export const handler: Handlers<Article> = {
   },
 }
 
-const Home = ({ data: article }: PageProps<Article>) => {
+const Home = ({ data: article, url }: PageProps<Article>) => {
   const { title, excerpt, date, author, authorUrl, body } = article
 
   const hasAuthor = author !== undefined
@@ -28,13 +29,16 @@ const Home = ({ data: article }: PageProps<Article>) => {
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
-      <Wrapper>
+      <Wrapper url={url}>
         <section class='mt-10 text(black dark:gray-300)'>
           <article>
             <header class='flex(& col) gap-3'>
-              <h2 class='text(2xl lg:3xl) font-bold'>
-                {title}
-              </h2>
+              <div class='flex items-center gap-4'>
+                <h2 class='text(2xl lg:3xl) font-bold'>
+                  {title}
+                </h2>
+                <ReadButton title={title} />
+              </div>
               {hasAuthor && (
                 <div class='flex items-center gap-1'>
                   <span class='font-semibold'>
