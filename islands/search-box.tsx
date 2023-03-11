@@ -54,10 +54,13 @@ const SearchBox = () => {
               title.slice(bestMatch[1] + 1)
 
             return (
-              <li key={slug}>
+              <li
+                key={slug}
+                class='hover:last-child:rounded-b-3xl dark:hover:bg-[#25282E] hover:bg-gray-100'
+              >
                 <a
                   href={`/${slug}`}
-                  class='text(sm lg:base black dark:white) font-bold block px-4 py-5 hover:last-child:rounded-b-3xl dark:hover:bg-[#25282E] hover:bg-gray-100'
+                  class='text(sm lg:base black dark:white) font-bold block px-4 py-5'
                   dangerouslySetInnerHTML={{ __html: html }}
                 />
               </li>
