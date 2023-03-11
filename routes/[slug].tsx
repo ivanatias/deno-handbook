@@ -15,7 +15,7 @@ export const handler: Handlers<Article> = {
   },
 }
 
-const Home = ({ data: article, url }: PageProps<Article>) => {
+const ArticlePage = ({ data: article, url }: PageProps<Article>) => {
   const { title, excerpt, date, author, authorUrl, body } = article
 
   const hasAuthor = author !== undefined
@@ -93,4 +93,4 @@ const Home = ({ data: article, url }: PageProps<Article>) => {
   )
 }
 
-export default Home
+export default ArticlePage
