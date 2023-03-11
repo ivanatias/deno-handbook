@@ -36,7 +36,6 @@ const SearchBox = () => {
         onInput={handleChange}
         autocomplete='off'
       />
-
       {searchResults.length > 0 && (
         <ul class='absolute top-full border(& green-300) rounded-b-3xl z-50 bg(white dark:[#0d1117]) w-full'>
           {searchResults.map((result) => {
