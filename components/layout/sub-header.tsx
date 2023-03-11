@@ -18,7 +18,7 @@ const SubHeader = ({ isHome }: Props) => (
       {!isHome && (
         <a
           href='/'
-          class='text(xs lg:base) mt-5 w-max font-bold hover:underline transition duration-150'
+          class='text(xs center lg:base lg:left) mt-5 w-max font-bold hover:underline transition duration-150'
         >
           ← Volver al inicio
         </a>
