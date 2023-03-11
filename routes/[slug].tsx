@@ -1,4 +1,4 @@
-import { Handlers, PageProps } from '$fresh/server.ts'
+import type { Handlers, PageProps } from '$fresh/server.ts'
 import { Head } from '$fresh/runtime.ts'
 import Wrapper from 'components/layout/wrapper.tsx'
 import ReadButton from 'islands/button-read.tsx'
