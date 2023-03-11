@@ -33,7 +33,7 @@ const Home = ({ data: article, url }: PageProps<Article>) => {
         <section class='mt-10 text(black dark:gray-300)'>
           <article>
             <header class='flex(& col) gap-3'>
-              <div class='flex items-center gap-4'>
+              <div class='flex(& wrap) items-center gap-4'>
                 <h2 class='text(2xl lg:3xl) font-bold'>
                   {title}
                 </h2>
