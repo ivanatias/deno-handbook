@@ -23,9 +23,9 @@ Cada mensaje de commit consiste de un **encabezado**, **cuerpo** (opcional) y **
 
 ```
 <tipo>(<scope>): <asunto>
-<LINEA EN BLANCO>
+<LÍNEA EN BLANCO>
 <cuerpo>
-<LINEA EN BLANCO>
+<LÍNEA EN BLANCO>
 <footer>
 ```
 
