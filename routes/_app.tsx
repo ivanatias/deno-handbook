@@ -1,4 +1,4 @@
-import { AppProps } from '$fresh/server.ts'
+import type { AppProps } from '$fresh/server.ts'
 
 const App = ({ Component }: AppProps) => (
   <body class='bg(white dark:[#0d1117])'>
