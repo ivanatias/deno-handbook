@@ -11,7 +11,6 @@ const SearchBox = () => {
       const res = await fetch(`/api/search?q=${searchTerm}`)
       const results: SearchResult[] = await res.json()
       setSearchResults(results)
-      console.log(results)
     }, 300),
     [],
   )
