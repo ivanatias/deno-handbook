@@ -7,10 +7,10 @@ interface Props {
 
 const ReadButton = ({ title }: Props) => {
   const [readList, setReadList] = useState<string[]>([])
-  const [didRead, setDidRead] = useState(false)
   const [mounted, setMounted] = useState(false)
 
   const isFirstRender = useRef(true)
+  const didRead = readList.includes(title)
   const buttonText = didRead ? 'Marcar no leído' : 'Marcar leído'
 
   useEffect(() => {
@@ -25,7 +25,6 @@ const ReadButton = ({ title }: Props) => {
     if (rawList !== null) {
       const parsedReadList = JSON.parse(rawList) as string[]
       if (parsedReadList.length > 0) setReadList(parsedReadList)
-      setDidRead(parsedReadList.includes(title))
     }
 
     setMounted(true)
@@ -34,14 +33,12 @@ const ReadButton = ({ title }: Props) => {
 
   const handleRead = (title: string) => {
     setReadList((prevList) => prevList.concat(title))
-    setDidRead(true)
   }
 
   const handleUnread = (title: string) => {
     setReadList((prevList) =>
       prevList.filter((articleTitle) => articleTitle !== title)
     )
-    setDidRead(false)
   }
 
   const handleClick = (title: string) => {
