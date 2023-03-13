@@ -23,7 +23,7 @@ const Home = ({ data: articles, url }: PageProps<Article[]>) => (
       />
     </Head>
 
-    <Wrapper url={url}>
+    <Wrapper currentPath={url.pathname}>
       <section>
         <Grid additionalStyles='mt-10'>
           {articles.map(({ title, excerpt, slug }) => (

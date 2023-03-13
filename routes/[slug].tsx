@@ -29,7 +29,7 @@ const ArticlePage = ({ data: article, url }: PageProps<Article>) => {
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
       </Head>
 
-      <Wrapper url={url}>
+      <Wrapper currentPath={url.pathname}>
         <section class='mt-10 text(black dark:gray-300)'>
           <article>
             <header class='flex(& col) gap-3'>
