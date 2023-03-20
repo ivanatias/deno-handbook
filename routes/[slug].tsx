@@ -53,7 +53,7 @@ const ArticlePage = ({ data: article, url }: PageProps<Article>) => {
                         class='hover:underline transition duration-150'
                       >
                         {author}
-                        <span class='sr-only'>opens a new window</span>
+                        <span class='sr-only'>opens a new tab</span>
                       </a>
                     )
                     : (
