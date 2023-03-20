@@ -10,6 +10,7 @@ const Footer = () => (
     >
       <AiFillGithub size={24} />
       ¡Contribuye al proyecto!
+      <span class='sr-only'>opens a new window</span>
     </a>
     <a
       href='https://github.com/ivanatias/deno-handbook/issues'
@@ -19,6 +20,7 @@ const Footer = () => (
     >
       ¿Tienes alguna sugerencia, has encontrado un error o te gustaría ver
       alguna feature nueva? ¡Infórmanos!
+      <span class='sr-only'>opens a new window</span>
     </a>
   </footer>
 )

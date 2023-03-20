@@ -54,7 +54,7 @@ const ReadButton = ({ title }: Props) => {
           : 'bg-transparent border(& green-300 dark:green-100)'
       } ${
         !mounted ? 'opacity-0 pointer-events-none' : ''
-      } transition duration-150 ease-in focus:outline-none tracking-tighter hover:scale-105`}
+      } transition duration-150 ease-in tracking-tighter hover:scale-105`}
       disabled={!IS_BROWSER || !mounted}
     >
       {buttonText}
