@@ -7,7 +7,6 @@ interface Props {
 
 const ReadButton = ({ title }: Props) => {
   const [readList, setReadList] = useState<string[]>([])
-  const [mounted, setMounted] = useState(false)
 
   const isFirstRender = useRef(true)
   const didRead = readList.includes(title)
@@ -22,40 +21,40 @@ const ReadButton = ({ title }: Props) => {
   useEffect(() => {
     const rawList = window.localStorage.getItem('read')
 
-    if (rawList !== null) {
-      const parsedReadList = JSON.parse(rawList) as string[]
-      if (parsedReadList.length > 0) setReadList(parsedReadList)
-    }
+    const parsedReadList = rawList !== null
+      ? JSON.parse(rawList) as string[]
+      : []
 
-    setMounted(true)
+    setReadList(parsedReadList)
+
     isFirstRender.current = false
   }, [])
 
-  const handleRead = (title: string) => {
+  const handleRead = () => {
     setReadList((prevList) => prevList.concat(title))
   }
 
-  const handleUnread = (title: string) => {
+  const handleUnread = () => {
     setReadList((prevList) =>
       prevList.filter((articleTitle) => articleTitle !== title)
     )
   }
 
-  const handleClick = (title: string) => {
-    didRead ? handleUnread(title) : handleRead(title)
+  const handleClick = () => {
+    didRead ? handleUnread() : handleRead()
   }
 
   return (
     <button
-      onClick={() => handleClick(title)}
+      onClick={handleClick}
       class={`text(xs lg:sm gray-700 dark:gray-50) py-2 px-4 rounded-full ${
         didRead
           ? 'bg-green-600 text-gray-50 border(& green-400 dark:green-500)'
           : 'bg-transparent border(& green-300 dark:green-100)'
       } ${
-        !mounted ? 'opacity-0 pointer-events-none' : ''
+        isFirstRender.current ? 'opacity-0 pointer-events-none' : ''
       } transition duration-150 ease-in tracking-tighter hover:scale-105`}
-      disabled={!IS_BROWSER || !mounted}
+      disabled={!IS_BROWSER || isFirstRender.current}
     >
       {buttonText}
     </button>
